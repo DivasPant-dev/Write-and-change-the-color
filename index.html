@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write and BOOM</title>
+
+    <style>
+        h1 {
+            font-size: 3rem;
+        }
+
+        .container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn {
+            height: 60px;
+            width: 60px;
+            font-size: 1rem;
+            border-radius: 50%;
+            background-color: lightgreen;
+            border: 5px solid green;
+            color: purple;
+            cursor: pointer;
+        }
+
+        #input {
+            height: 40px;
+            width: 400px;
+            font-size: 1.5rem;
+        }
+
+        .test {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Write and Apply the Color
+    </h1>
+
+    <div class="container">
+        <div class="test">
+            ShowCasing
+        </div>
+    
+        <div>
+            <input type="text" id="input" placeholder="Type any color here!">
+
+            <button class="btn" onclick="apply()">Apply</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+
+        function apply() {
+            const input = document.getElementById("input");
+            const inputV = document.getElementById("input").value;
+            const display = document.querySelector(".test");
+
+            if (inputV == "Black" || inputV == "black"){
+                display.style.color = "White";
+                display.style.borderColor = "Pink";
+            } else {
+                display.style.color = "Black";
+                display.style.borderColor = "Black";
+            }
+            
+            display.style.backgroundColor = inputV;
+            input.value = "";
+        }
+
+        document.addEventListener("keydown", (event)=> {
+            var keyPressed = event.key;
+
+            if (keyPressed == "Enter") {
+                const input = document.getElementById("input");
+                const inputV = document.getElementById("input").value;
+                const display = document.querySelector(".test");
+
+                if (inputV == "Black" || inputV == "black") {
+                    display.style.color = "White";
+                    display.style.borderColor = "Pink";
+                } else {
+                    display.style.color = "Black";
+                    display.style.borderColor = "Black";
+                }
+
+                display.style.backgroundColor = inputV;
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
